@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend-Finder-Survey</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Survey Questions</h1>
+                <hr>
+                <h2>
+                    <b>About you</b>
+                </h2>
+                <h3>Name (required)</h3>
+                <input type="text" class="form-control" id="name">
+                <h3>Link to photo image (required)</h3>
+                <input type="text" class="form-control" id="photo">
+                <hr>
+                <h2>
+                    <b>Time to answer some questions</b>
+                </h2>
+                <p>(1 = strongly disagree, 5 = strongly agree)</p>
+                <h2>
+                    <b>Question 1</b>
+                </h2>
+                <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+                <select class="selectpicker" id="question-1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <h2>
+                    <b>Question 2</b>
+                </h2>
+                <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+                <select class="selectpicker" id="question-2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <h2>
+                    <b>Question 3</b>
+                </h2>
+                <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+                <select class="selectpicker" id="question-3">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <h2>
+                    <b>Question 4</b>
+                </h2>
+                <h4>You rarely do something just out of sheer curiosity.</h4>
+                <select class="selectpicker" id="question-4">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <h2>
+                    <b>Question 5</b>
+                </h2>
+                <h4>People can rarely upset you.</h4>
+                <select class="selectpicker" id="question-5">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <h2>
+                    <b>Question 6</b>
+                </h2>
+                <h4>It is often difficult for you to relate to other people’s feelings.</h4>
+                <select class="selectpicker" id="question-6">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <h2>
+                    <b>Question 7</b>
+                </h2>
+                <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+                <select class="selectpicker" id="question-7">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <h2>
+                    <b>Question 8</b>
+                </h2>
+                <h4>You rarely get carried away by fantasies and ideas.</h4>
+                <select class="selectpicker" id="question-8">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <h2>
+                    <b>Question 9</b>
+                </h2>
+                <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+                <select class="selectpicker" id="question-9">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <h2>
+                    <b>Question 10</b>
+                </h2>
+                <h4>You feel more energetic after spending time with a group of people.</h4>
+                <select class="selectpicker" id="question-10">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <hr>
+                <input type="submit" class="btn btn-info form-control" value="Submit Button" id="submit">
+                <hr>
+                <footer>
+                    <a href="#"> API FRIENDS LIST</a><b>|</b> <a href="#">GITHUB REPO</a>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Javascript times-->
+<script>
+
+    //Create the on-click event for the app to start
+    $("#submit").on("click", function(event){
+        event.preventDefault();
+
+        var userAnswers = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            questions: [
+            question1= $("#question-1").val().trim(),
+            question2= $("#question-2").val().trim(),
+            question3= $("#question-3").val().trim(),
+            question4= $("#question-4").val().trim(),
+            question5= $("#question-5").val().trim(),
+            question6= $("#question-6").val().trim(),
+            question7= $("#question-7").val().trim(),
+            question8= $("#question-8").val().trim(),
+            question9= $("#question-9").val().trim(),
+            question10= $("#question-10").val().trim()
+            ]
+        }
+
+        
+    })
+
+</script>
+</html>
