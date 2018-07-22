@@ -10,8 +10,9 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static('public'));
 app.get('/', function (req, res) {
-    res.sendfile('home.html', { root: __dirname + "./public" } );
+    res.sendFile('home.html', { root: __dirname + "./public" } );
     
   })
 
